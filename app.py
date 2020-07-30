@@ -1,10 +1,17 @@
-from flask import Flask
+from flask import Flask,render_template
 app=Flask(__name__)
 
 @app.route('/')
 def home():
+    return render_template('Home.html')
 
-     return '<h1>Hello Hager!</h1>'
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/checkout')
+def checkout():
+    return render_template('checkout.html')
 
 
 if __name__ == "__main__":
